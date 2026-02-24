@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@300;400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+
+.cl-footer {
+  background: linear-gradient(11deg, #0f1c2e, #0a1624, #071a2f);
+  color: #ffffff;
+  padding: 40px 20px 20px;
+}
+
+.cl-footer-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cl-footer-logo {
+  flex: 1 1 250px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cl-footer-logo img {
+  height: 80px;
+  object-fit: contain;
+}
+
+.cl-footer-logo h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.cl-footer-contacto,
+.cl-footer-redes {
+  flex: 1 1 250px;
+}
+
+.cl-footer-contacto h3,
+.cl-footer-redes h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.cl-footer-contacto p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.cl-footer-iconos {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.cl-footer-iconos a {
+  color: #fff9f9;
+  transition: color 0.3s ease;
+}
+
+.cl-footer-iconos a:hover {
+  color: #545f6d;
+}
+
+.cl-footer-derechos {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  padding-top: 15px;
+}
+@media (max-width: 768px) {
+  .cl-footer {
+    padding: 30px 15px 15px;
+  }
+
+  .cl-footer-contenedor {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .cl-footer-logo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .cl-footer-logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cl-footer-logo h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .cl-footer-contacto,
+  .cl-footer-redes {
+    width: 100%;
+    padding: 5px 10px;
+  }
+
+  .cl-footer-contacto h3,
+  .cl-footer-redes h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .cl-footer-contacto p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 2px 0;
+  }
+
+  .cl-footer-iconos {
+    justify-content: center;
+    gap: 12px;
+    font-size: 20px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .cl-footer-derechos {
+    font-size: 12px;
+    padding-top: 15px;
+    margin-top: 20px;
+  }
+}

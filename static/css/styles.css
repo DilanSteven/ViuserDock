@@ -10,3 +10,43 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+ .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1000;
+    animation: float 2s ease-in-out infinite;
+}
+
+.whatsapp-float img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.whatsapp-float img:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float span {
+    margin-top: 5px;
+    background-color: #25D366;
+    color: white;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Animación leve de subir y bajar */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}

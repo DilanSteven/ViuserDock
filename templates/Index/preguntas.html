@@ -1,0 +1,66 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index/preguntas.css') }}">
+</head>
+
+<div class="preguntas" id="preguntas">
+    <h1>Preguntas Frecuentes – ViuserDock</h1>
+  <div class="pregunta">
+    <button class="pregunta-titulo">¿Cómo se inicia el proceso con ViuserDock?</button>
+    <div class="pregunta-contenido">
+      El primer paso es llenar un formulario con tus datos y la descripción de tu proyecto. Luego, podemos coordinar todo por WhatsApp, correo o videollamada según tu comodidad. Esto nos permite entender tus necesidades y planificar la ejecución de manera rápida y directa.
+    </div>
+  </div>
+
+  <div class="pregunta">
+    <button class="pregunta-titulo">¿Cómo se organiza el progreso del proyecto?</button>
+    <div class="pregunta-contenido">
+      Entregamos un cronograma de trabajo con cada etapa del proyecto, para que siempre sepas qué se está haciendo y en qué fecha se entregará. Además, hacemos seguimiento continuo y comunicación constante para que todo avance sin sorpresas.
+    </div>
+  </div>
+
+  <div class="pregunta">
+    <button class="pregunta-titulo">¿Cómo se manejan los contratos y acuerdos?</button>
+    <div class="pregunta-contenido">
+      Para tu tranquilidad, realizamos pequeños contratos por cada proyecto o fase. Esto garantiza claridad en responsabilidades, alcance del trabajo y condiciones de entrega. Todo queda por escrito para proteger a ambas partes.
+    </div>
+  </div>
+
+  <div class="pregunta">
+    <button class="pregunta-titulo">¿Cuál es la forma de pago?</button>
+    <div class="pregunta-contenido">
+      Los pagos pueden hacerse 50% al inicio y 50% al finalizar, o cualquier arreglo que se ajuste a tus necesidades. Queremos que el proceso sea flexible y conveniente para ti, sin comprometer la calidad del trabajo.
+    </div>
+  </div>
+
+  <div class="pregunta">
+    <button class="pregunta-titulo">¿Qué pasa si un proyecto queda en pausa o no hay comunicación por parte del cliente?</button>
+    <div class="pregunta-contenido">
+      Si hay silencio prolongado del proyecto, se suspende temporalmente hasta retomar la comunicación. Esto evita esfuerzos innecesarios y mantiene todo organizado hasta que se continúe.
+    </div>
+  </div>
+
+  <div class="pregunta">
+    <button class="pregunta-titulo">¿Puedo comunicarme y resolver dudas durante el proyecto?</button>
+    <div class="pregunta-contenido">
+      ¡Por supuesto! La comunicación es directa y fluida: puedes escribir por WhatsApp, correo o llamadas según prefieras. Queremos que te sientas acompañado en todo momento y que tengas claridad sobre cada avance.
+    </div>
+  </div>
+
+</div>
+<script>
+     const preguntas = document.querySelectorAll('.pregunta');
+
+  preguntas.forEach(pregunta => {
+    const titulo = pregunta.querySelector('.pregunta-titulo');
+    titulo.addEventListener('click', () => {
+      // Cerrar todas las demás
+      preguntas.forEach(p => {
+        if(p !== pregunta) {
+          p.classList.remove('activa');
+        }
+      });
+      // Alternar la actual
+      pregunta.classList.toggle('activa');
+    });
+  });
+</script>

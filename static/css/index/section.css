@@ -1,0 +1,132 @@
+/* ===== HERO SECTION ===== */
+
+.hero{
+    min-height:70vh;
+    background: linear-gradient(135deg, #0f1c2e, #0a1624, #071a2f);
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+}
+
+.hero-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    width:100%;
+}
+
+/* LEFT */
+
+.hero-left{
+    flex:1;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    margin-bottom:20px;
+    justify-content: center;
+}
+
+.logo-img{
+    width:150px;
+}
+
+.brand h1{
+    color:white;
+    font-size:32px;
+    letter-spacing:2px;
+}
+
+.slogan{
+    font-size:38px;
+    color:#00bcd4;
+    margin-bottom:25px;
+}
+
+.description{
+    color:#e6edf5;
+    font-size:16px;
+    line-height:1.6;
+    margin-bottom:35px;
+    text-align: justify;
+}
+
+.cta-btn{
+    display:inline-block;
+    padding:14px 40px;
+    background:linear-gradient(90deg,#00bcd4,#0077b6);
+    color:white;
+    font-weight:600;
+    border-radius:40px;
+    text-decoration:none;
+    transition:0.3s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.cta-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* RIGHT GRID */
+
+.hero-right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.tech-grid{
+    display:grid;
+    grid-template-columns:repeat(3,110px);
+    gap:25px;
+}
+
+.tech{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:110px;
+    border-radius:20px;
+    transition:0.3s ease;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.tech i{
+    font-size:50px;
+}
+
+.tech:hover{
+    transform:translateY(-8px) scale(1.1);
+    background:rgba(255,255,255,0.1);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .tech-grid{
+        grid-template-columns:repeat(3,80px);
+        gap:15px;
+    }
+
+    .tech{
+        height:80px;
+    }
+
+    .tech i{
+        font-size:35px;
+    }
+
+    .slogan{
+        font-size:28px;
+    }
+}

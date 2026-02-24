@@ -1,0 +1,180 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index/formulario.css') }}">
+</head>
+
+
+<div class="formulario-servicio" id="formulario-servicio">
+
+  <div class="form-container">
+
+    <h2 class="form-title"><i class="fa-solid fa-chart-line"></i> Formulario de Solicitud de Servicio</h2>
+
+    <form id="serviceForm">
+
+      <div class="form-grid">
+
+        <!-- Información básica -->
+        <div class="form-group">
+          <label>Nombre completo *</label>
+          <input type="text" id="nombre" maxlength="60" required>
+        </div>
+
+        <div class="form-group">
+          <label>Nombre de la empresa</label>
+          <input type="text" maxlength="60">
+        </div>
+
+        <div class="form-group">
+          <label>Correo electrónico *</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Número de contacto *</label>
+          <input type="tel" id="telefono" maxlength="15" required>
+        </div>
+
+        <div class="form-group">
+          <label>Ciudad / País *</label>
+          <input type="text" id="ubicacion" maxlength="60" required>
+        </div>
+
+        <div class="form-group full">
+          <label>Tipo de servicio *</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="servicio"> Desarrollo web</label>
+            <label><input type="checkbox" name="servicio"> Aplicación móvil</label>
+            <label><input type="checkbox" name="servicio"> Sistema personalizado</label>
+            <label><input type="checkbox" name="servicio"> Automatización</label>
+            <label><input type="checkbox" name="servicio"> Consultoría digital</label>
+          </div>
+        </div>
+
+        <div class="form-group full">
+          <label>Describe tu proyecto *</label>
+          <textarea id="descripcion" maxlength="500" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Objetivo principal *</label>
+          <select id="objetivo" required>
+            <option value="">Seleccionar</option>
+            <option>Vender más</option>
+            <option>Automatizar procesos</option>
+            <option>Mejorar presencia digital</option>
+            <option>Reducir costos</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Fecha límite</label>
+          <input type="date">
+        </div>
+
+        <div class="form-group">
+          <label>Proyecto</label>
+          <select>
+            <option>Desde cero</option>
+            <option>Ya iniciado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Rango de inversión *</label>
+          <select id="presupuesto" required>
+            <option value="">Seleccionar</option>
+            <option>Básico</option>
+            <option>Medio</option>
+            <option>Avanzado</option>
+            <option>Prefiero asesoría</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>Comentarios adicionales</label>
+          <textarea maxlength="300"></textarea>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+
+    </form>
+
+  </div>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("serviceForm");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Evita el envío si hay errores
+
+    let errores = [];
+
+    // Validar nombre
+    const nombre = document.getElementById("nombre");
+    if (!nombre.value.trim()) {
+      errores.push("El nombre completo es obligatorio.");
+    }
+
+    // Validar email
+    const email = document.getElementById("email");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.value.trim()) {
+      errores.push("El correo electrónico es obligatorio.");
+    } else if (!emailRegex.test(email.value)) {
+      errores.push("El correo electrónico no es válido.");
+    }
+
+    // Validar teléfono
+    const telefono = document.getElementById("telefono");
+    const telDigits = telefono.value.replace(/\D/g, ''); // quitar todo lo que no sea número
+    if (!telefono.value.trim()) {
+      errores.push("El número de contacto es obligatorio.");
+    } else if (telDigits.length !== 10) {
+      errores.push("El número de contacto debe tener 10 dígitos.");
+    }
+
+    // Validar ciudad/país
+    const ubicacion = document.getElementById("ubicacion");
+    if (!ubicacion.value.trim()) {
+      errores.push("La ciudad/país es obligatorio.");
+    }
+
+    // Validar tipo de servicio (al menos un checkbox)
+    const servicios = document.querySelectorAll('input[name="servicio"]:checked');
+    if (servicios.length === 0) {
+      errores.push("Debe seleccionar al menos un tipo de servicio.");
+    }
+
+    // Validar descripción
+    const descripcion = document.getElementById("descripcion");
+    if (!descripcion.value.trim()) {
+      errores.push("Debe describir su proyecto.");
+    }
+
+    // Validar objetivo principal
+    const objetivo = document.getElementById("objetivo");
+    if (!objetivo.value) {
+      errores.push("Debe seleccionar un objetivo principal.");
+    }
+
+    // Validar presupuesto
+    const presupuesto = document.getElementById("presupuesto");
+    if (!presupuesto.value) {
+      errores.push("Debe seleccionar un rango de inversión.");
+    }
+
+    if (errores.length > 0) {
+      alert("Por favor corrija los siguientes errores:\n\n" + errores.join("\n"));
+      return false;
+    }
+
+    // Si pasa todas las validaciones, se puede enviar
+    alert("Formulario enviado correctamente ✅");
+    form.submit();
+  });
+});
+</script>

@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Mi Proyecto Web</title>
+    <title>ViuserDock</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/png">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar/navbar.css') }}">
 </head>
+
 <body>
     {% include "navbar/navbar.html" %}
-    <h1>Proyecto Full Stack 🚀</h1>
-    <button onclick="obtenerSaludo()">Pedir saludo al backend</button>
-    <p id="respuesta"></p>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% include "Index/section.html" %}
+    {% include "Index/conocenos.html" %}
+    {% include "Index/proyectos.html" %}
+    {% include "Index/formulario.html" %}
+    {% include "Index/preguntas.html" %}
+    {% include "navbar/footer.html" %}
+    <!--WhatsApp -->
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-float">
+        <img src="{{ url_for('static', filename='img/msm.png') }}" alt="WhatsApp">
+        <span>Escríbenos</span>
+    </a>
 </body>
+
 </html>

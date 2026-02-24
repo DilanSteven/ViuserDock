@@ -1,0 +1,156 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index/proyectos.css') }}">
+</head>
+
+<div class="proyectos" id="proyectos">
+
+  <h2 class="titulo-proyectos" style="color:#00bcd4;">
+  <i class="fa-solid fa-briefcase"></i> Nuestros Proyectos
+</h2>
+
+  <div class="carousel">
+
+    <!-- Flechas -->
+    <div class="arrow left-arrow">&#10094;</div>
+    <div class="arrow right-arrow">&#10095;</div>
+
+    <div class="carousel-track">
+
+      <!-- PROYECTO 1 -->
+      <div class="slide">
+        <div class="slide-content">
+
+          <!-- Imagen izquierda -->
+          <div class="slide-left">
+            <img src="{{ url_for('static', filename='img/cup-and-quill.png') }}" alt="Proyecto 1">
+          </div>
+
+          <!-- Texto derecha -->
+          <div class="slide-right">
+            <h3>☕ Cup & Quill</h3>
+            <p>Cup & Quill fusiona café, lectura y tecnología en una experiencia digital moderna para cafeterías tipo restaurante.</p>
+
+            <ul>
+              <li>📖 Catálogo digital de libros</li>
+              <li>☕ Menú interactivo online</li>
+              <li>🛒 Sistema de órdenes y reservas</li>
+              <li>📱 Diseño responsive moderno</li>
+              <li>⚡ Optimización de tiempos en atención</li>
+            </ul>
+
+            <a href="#" class="btn-visitar">Visitar</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Duplica este bloque hasta tener mínimo 5 -->
+
+      <!-- PROYECTO 2 -->
+      <div class="slide">
+        <div class="slide-content">
+
+          <!-- Imagen izquierda -->
+          <div class="slide-left">
+            <img src="{{ url_for('static', filename='img/iyaiclub.webp') }}" alt="Proyecto 2">
+          </div>
+
+          <!-- Texto derecha -->
+          <div class="slide-right">
+            <h3>✈ Iyaiclub</h3>
+            <p>Iyaiclub conecta viajeros con experiencias únicas mediante una plataforma integral de reservas, sistema digital para gestión turística, reservas y planificación de viajes.</p>
+
+            <ul>
+              <li>🏨 Solicitud y reserva de habitaciones</li>
+              <li>✈ Gestión de vuelos</li>
+              <li>🌎 Catálogo de destinos turísticos</li>
+              <li>📅 Sistema de reservas automatizado</li>
+              <li>📍 Visualización de lugares y experiencias</li>
+              <li>👤 Perfil de usuario y seguimiento de viajes</li>
+              <li>🔒 Seguridad en pagos y datos</li>
+            </ul>
+
+            <a href="#" class="btn-visitar">Visitar</a>
+          </div>
+
+        </div>
+      </div>
+      <!--FIN   -->
+            <!-- PROYECTO 2 -->
+      <div class="slide">
+        <div class="slide-content">
+
+          <!-- Imagen izquierda -->
+          <div class="slide-left">
+            <img src="{{ url_for('static', filename='img/itsep.webp') }}" alt="Proyecto 3">
+          </div>
+
+          <!-- Texto derecha -->
+          <div class="slide-right">
+            <h3>👥 ITSEP</h3>
+            <p>ITSEP optimiza el control y seguimiento del personal en empresas e instituciones, sistema digital de asistencia, registro y reportes de personal.</p>
+
+            <ul>
+              <li>🕒 Registro digital de asistencia</li>
+              <li>📊 Generación automática de reportes</li>
+              <li>👤 Gestión de empleados</li>
+              <li>📁 Historial de registros</li>
+              <li>📈 Panel de métricas y estadísticas</li>
+              <li>🔐 Seguridad y control de acceso</li>
+            </ul>
+
+            <a href="#" class="btn-visitar">Visitar</a>
+          </div>
+
+        </div>
+      </div>
+      <!--FIN   -->
+    </div>
+
+  </div>
+
+</div>
+<script>
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.querySelector('.right-arrow');
+const prevBtn = document.querySelector('.left-arrow');
+
+let index = 0;
+let interval;
+
+function updateSlide() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide() {
+  index++;
+  if (index >= slides.length) index = 0;
+  updateSlide();
+}
+
+function prevSlide() {
+  index--;
+  if (index < 0) index = slides.length - 1;
+  updateSlide();
+}
+
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
+
+function startAutoSlide() {
+  interval = setInterval(nextSlide, 5000);
+}
+
+function stopAutoSlide() {
+  clearInterval(interval);
+}
+
+document.querySelector('.carousel')
+  .addEventListener('mouseenter', stopAutoSlide);
+
+document.querySelector('.carousel')
+  .addEventListener('mouseleave', startAutoSlide);
+
+startAutoSlide();
+</script>

@@ -1,0 +1,105 @@
+.formulario-servicio {
+  padding: 20px 12%;
+  background: linear-gradient(45deg, #0f1c2e, #0a1624, #071a2f);
+  color: #e6edf3;
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  padding: 50px;
+  border-radius: 12px;
+  border: 1px solid #1f2f45;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+
+label {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #9fb3c8;
+}
+
+input, select, textarea {
+  background: #112240;
+  border: 1px solid #1e3a5f;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 0 2px rgba(0,191,255,0.2);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.checkbox-group label {
+  font-size: 0.9rem;
+  color: #c7d5e0;
+}
+
+.btn-enviar {
+  margin-top: 40px;
+  padding: 14px 35px;
+  background: #00bfff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-enviar:hover {
+  background: #0099cc;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: span 1;
+  }
+
+  .form-container {
+    padding: 30px;
+  }
+}

@@ -1,0 +1,92 @@
+.conocenos {
+  padding: 10px 10%;
+  background: linear-gradient(45deg, #0f1c2e, #0a1624, #071a2f);
+  color: #fff;
+}
+.conocenos h2{
+    font-size:40px;
+    color:#00bcd4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    padding: 30px;
+}
+.titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+/* TITULOS TARJETAS */
+.glass-card h3{
+    color:#00bcd4;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.contenido {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.left, .right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.glass-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.glass-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.glass-card ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.glass-card ul li i {
+  color: #00bfff;
+}
+
+/* IMAGEN */
+.imagen-container {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px; /* espacio fijo asegurado */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.imagen-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
