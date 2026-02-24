@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Mi Proyecto Web</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar/navbar.css') }}">
 </head>
 <body>
-
+    {% include "navbar/navbar.html" %}
     <h1>Proyecto Full Stack 🚀</h1>
     <button onclick="obtenerSaludo()">Pedir saludo al backend</button>
     <p id="respuesta"></p>

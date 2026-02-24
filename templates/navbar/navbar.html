@@ -1,0 +1,37 @@
+<nav>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+        VIUSERDOCK
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Conócenos</a></li>
+        <li><a href="#">Proyectos</a></li>
+        <li><a href="#">Contáctanos</a></li>
+        <li><a href="#">Preguntas Frecuentes</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+<script>
+    const toggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links a");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+/* Cierra menú al tocar opción en móvil */
+links.forEach(link =>{
+    link.addEventListener("click", ()=>{
+        navLinks.classList.remove("active");
+    });
+});
+
+</script>
